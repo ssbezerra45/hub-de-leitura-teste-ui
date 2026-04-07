@@ -4,8 +4,9 @@ describe('Funcionalidade: Cadastro no Hub de leitura', () => {
         cy.visit('register.html')
     });
     it('Deve fazer cadastro com sucesso', () => {
+        let email = `sergio${Date.now()}@example.com`
         cy.get('#name').type('Sergio Bezerra')
-        cy.get('#email').type('sergio12@example.com')
+        cy.get('#email').type(email)
         cy.get('#phone').type('11987654321')
         cy.get('#password').type('senha123')
         cy.get('#confirm-password').type('senha123')
