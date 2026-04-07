@@ -2,7 +2,7 @@
 
 describe('Funcionalidade contato', () => {
   beforeEach(() => {
-    cy.visit('http://localhost:3000/index.html')
+    cy.visit('index.html')
   });
    
     it('Deve preencher formulario de contato com sucesso', () => {
@@ -47,7 +47,7 @@ describe('Funcionalidade contato', () => {
       cy.get('#alert-container').should('contain', 'Por favor, selecione o Assunto.')
       
     });
-    it.only('Deve validar mensagem de erro ao enviar preencher mensagem  ', () => {
+    it('Deve validar mensagem de erro ao enviar preencher mensagem  ', () => {
       cy.get('[name="name"]').type('Maria da Silva')
       cy.get('[name="email"]').type('maria@example.com')
       cy.get('[name="subject"]').select('Suporte Técnico')
