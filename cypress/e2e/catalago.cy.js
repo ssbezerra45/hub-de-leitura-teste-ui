@@ -29,7 +29,7 @@ describe('Funcionalidade: Catálogo de livros', () => {
         cy.get('#global-alert-container').should('contain','A Divina Comédia')
         
     });
-    it('Deve clicar no terceiro botão adicionar à cesta', () => {
+    it('Deve clicar no quinto botão adicionar à cesta', () => {
         cy.get('.btn-primary').eq(4).click()
         cy.get('#global-alert-container').should('contain','A Metamorfose')
         cy.contains('A Metamorfose').should('exist')
