@@ -22,6 +22,7 @@ describe('Funcionalidade: Login', () => {
         cy.login(user.name, user.senha)
         cy.url().should('include', 'dashboard')
     });
+    
         
     });
 
