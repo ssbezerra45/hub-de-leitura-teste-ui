@@ -6,6 +6,9 @@ describe('Funcionalidade: Cadastro no Hub de leitura', () => {
     beforeEach(() => {
         cadastroPage.visitarPaginadeCadastro()
     });
+    afterEach(() => {
+        cy.screenshot
+    });
     it('Deve fazer cadastro com sucesso usando função Js', () => {
         let email = `sergio${Date.now()}@example.com`
         cy.get('#name').type('Sergio Bezerra')
@@ -49,7 +52,7 @@ describe('Funcionalidade: Cadastro no Hub de leitura', () => {
         cy.get(':nth-child(1) > .invalid-feedback').should('contain', "Nome deve ter pelo menos 2 caracteres")
 
     });
-    it.only('Deve validar mensagem ao tentar cadastrar sem preencher email', () => {
+    it('Deve validar mensagem ao tentar cadastrar sem preencher email', () => {
         cadastroPage.preencherCadastro('Sergio Bezerra', '', '11987654321', 'senha123', 'senha123')
        cy.get('#register-form > :nth-child(2) > .invalid-feedback').should('contain', "Email válido é obrigatório")
 
